@@ -1,0 +1,32 @@
+.body {
+    background-image: url("background.jpg");
+    background-position: center;
+    background-size: cover;
+}
+
+#Canvas {
+    border-width: 10px;
+    border-style: ridge;
+    background-color: white;
+}
+
+#head_info {
+    width: 600px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+h2 {
+    border-radius: 10px;
+    width: 200px;
+    padding: 5px;
+}
+
+h3 {
+    display: inline-block;
+}
+
+span {
+    color: black;
+}
+
