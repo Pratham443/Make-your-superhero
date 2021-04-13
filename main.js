@@ -1,7 +1,7 @@
 var canvas = new fabric.Canvas("Canvas");
 
-var block_width = 30;
-var block_height = 30;
+var block_width = 100;
+var block_height = 100;
 
 var player_X = 10;
 var player_Y = 10;
@@ -28,8 +28,8 @@ function new_image(get_image) {
     fabric.Image.fromURL(get_image, function(Img){
         block_object = Img;
 
-        block_object.scaleToWidth(100);
-        block_object.scaleToHeight(100);
+        block_object.scaleToWidth(block_width);
+        block_object.scaleToHeight(block_height);
         block_object.set({
             top:player_Y,
             left:player_X
@@ -93,5 +93,65 @@ function my_keydown(e) {
     if(e.shiftKey == false && keyPressed == 72) {
         new_image("captain_america_left_hand.png");
         console.log("h");
+    }
+
+    if(keyPressed == 38) {
+        up();
+        console.log("up");
+    }
+
+    if(keyPressed == 40) {
+        down();
+        console.log("down");
+    }
+
+    if(keyPressed == 37) {
+        left();
+        console.log("left");
+    }
+
+    if(keyPressed == 39) {
+        right();
+        console.log("right");
+    }
+}
+
+function up() {
+    if(player_Y >=  0) {
+        player_Y = player_Y - 10;
+        console.log("image height is " + block_height);
+        console.log("X = " + player_X + " | Y = " + player_Y);
+        canvas.remove(player_object);
+        player_update();
+    }
+}
+
+function down() {
+    if(player_Y <=  500) {
+        player_Y = player_Y + 10;
+        console.log("image height is " + block_height);
+        console.log("X = " + player_X + " | Y = " + player_Y);
+        canvas.remove(player_object);
+        player_update();
+    }
+}
+
+function left() {
+    if(player_X >=  0) {
+        player_X = player_X - 10;
+        console.log("image height is " + block_height);
+        console.log("X = " + player_X + " | Y = " + player_Y);
+        canvas.remove(player_object);
+        player_update();
+    }
+}
+
+function right() {
+    if(player_X <=  850) {
+        player_X = player_X + 10;
+        console.log("image height is " + block_height);
+        console.log("X = " + player_X + " | Y = " + player_Y);
+        canvas.remove(player_object);
+        player_update();
     }
 }
